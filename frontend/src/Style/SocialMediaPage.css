@@ -1,0 +1,152 @@
+.social-container {
+  text-align: center;
+  padding: 20px 10px;
+  min-height: 100vh;
+  color: #fcd9b6;
+
+  background-size: 400% 400%;
+  animation: gradientSlide 12s ease infinite;
+}
+
+@keyframes gradientSlide {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.social-heading {
+    font-size: 42px;
+  margin-bottom: 60px;
+  font-weight: bold;
+  z-index: 1;
+  position: relative;
+  text-shadow: 0 0 20px rgba(252, 217, 182, 0.9);
+  animation: fadeInDown 1s ease;
+}
+
+
+
+.social-subtitle {
+  font-size: 1.2rem;
+  color: #eee;
+  margin-bottom: 30px;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.social-card {
+  background: rgba(23, 3, 78, 0.75);
+  padding: 30px 25px;
+  border-radius: 18px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+/* Different float delays so cards don’t move together */
+.social-card:nth-child(2) { animation-delay: 1s; }
+.social-card:nth-child(3) { animation-delay: 2s; }
+.social-card:nth-child(4) { animation-delay: 3s; }
+
+.social-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0px 15px 35px rgba(0,0,0,0.6);
+}
+
+/* Shiny sweep animation */
+.social-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.4) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+.social-card:hover::before {
+  animation: shine 1s ease forwards;
+}
+
+@keyframes shine {
+  100% { left: 125%; }
+}
+
+.social-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  transition: transform 0.4s, color 0.3s;
+}
+
+/* Pulse effect on hover */
+.social-card:hover .social-icon {
+  transform: scale(1.2);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+}
+
+.social-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.social-card p {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+/* Add button inside card */
+.visit-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  color: #222;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.visit-btn:hover {
+  background: linear-gradient(90deg, #fff, #FFD700);
+  color: #111;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+/* Floating animation */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Platform-specific hover glow */
+.social-card.linkedin:hover { border-color: #0A66C2; }
+.social-card.github:hover { border-color: #333; }
+.social-card.twitter:hover { border-color: #1DA1F2; }
+.social-card.instagram:hover { border-color: #E4405F; }
+.social-card.youtube:hover { border-color: #FF0000; }
+.social-card.facebook:hover { border-color: #1877F2; }

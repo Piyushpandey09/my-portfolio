@@ -1,0 +1,204 @@
+.ranking-page {
+  padding: 20px 10px;
+  text-align: center;
+  color: #fcd9b6;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating Background Circles */
+.ranking-page::before,
+.ranking-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.ranking-page::before {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+  animation: float 8s infinite alternate;
+}
+
+.ranking-page::after {
+  width: 400px;
+  height: 400px;
+  bottom: -120px;
+  right: -120px;
+  animation: float 10s infinite alternate-reverse;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-30px);
+  }
+}
+
+.ranking-title {
+  font-size: 42px;
+  margin-bottom: 60px;
+  font-weight: bold;
+  z-index: 1;
+  position: relative;
+  text-shadow: 0 0 20px rgba(252, 217, 182, 0.9);
+  animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rank-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  justify-items: center;
+  z-index: 1;
+  position: relative;
+  animation: fadeInUp 1.2s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Styling */
+.rank-card {
+  backdrop-filter: blur(14px);
+  border-radius: 28px;
+  padding: 30px 20px;
+  text-align: center;
+  cursor: pointer;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Sequential Slide Animation */
+.rank-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.rank-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.rank-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.rank-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.rank-card:nth-child(5) {
+  animation-delay: 1s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Shine Effect */
+.rank-card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: rotate(25deg);
+  transition: 0.6s;
+}
+
+.rank-card:hover::before {
+  top: 100%;
+  left: 100%;
+}
+
+/* Card Content */
+.rank-card img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 14px;
+  transition: transform 0.4s ease;
+}
+
+.rank-card p {
+  font-weight: bold;
+  font-size: 16px;
+  color: #fcd9b6;
+  transition: color 0.3s ease;
+}
+
+.rank-card:hover {
+  transform: translateY(-14px) scale(1.08) rotateX(8deg);
+  box-shadow: 0 18px 35px rgba(192, 132, 252, 0.7),
+              inset 0 0 18px rgba(255, 255, 255, 0.2);
+}
+
+.rank-card:hover img {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.rank-card:hover p {
+  color: #f6b26b;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .rank-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .rank-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}

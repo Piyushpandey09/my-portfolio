@@ -1,0 +1,46 @@
+/* General container spacing */
+.mt-5 {
+  margin-top: 4rem !important;
+}
+
+/* Lottie animation container */
+lottie-player {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Text Styling */
+
+.home-about-body:hover {
+  transform: translateY(-5px);
+}
+
+
+/* Main About Text Styling */
+.home-about-body {
+  color: #fdfdfd; /* Soft white text */
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+/* Subtle hover effect */
+.home-about-body:hover {
+  transform: translateY(-4px);
+}
+
+/* Highlighted text (Golden) */
+.purple {
+  color: #FFD700; /* Gold */
+  font-weight: 600;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .home-about-body {
+    font-size: 1rem;
+    padding: 15px 0;
+  }
+}

@@ -1,0 +1,68 @@
+.navbar {
+  background: linear-gradient(90deg, #0d0d2b 0%, #1f0f3f 100%);
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+/* Shadow on scroll */
+.navbar-shadow {
+  box-shadow: 0 4px 12px rgba(192, 132, 252, 0.25);
+}
+
+/* Brand Logo */
+.navbar-brand {
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color: #c084fc !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #a855f7 !important;
+}
+
+/* Nav Links */
+.nav-link {
+  color: #d1d5db !important;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #c084fc;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Toggler Icon (for mobile) */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28 255, 255, 255, 0.8 %29)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

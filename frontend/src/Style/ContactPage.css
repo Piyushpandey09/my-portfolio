@@ -1,0 +1,126 @@
+.contact-section {
+  padding: 80px 0 50px;
+  background: linear-gradient(135deg, #0d0d2b, #1a0b45);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.contact-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffeb99;
+  margin-bottom: 50px;
+  text-shadow: 0 0 15px rgba(255, 235, 153, 0.8);
+}
+
+.animated-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: #ffe4c4;
+  color: #8e44ec;
+  padding: 8px 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  animation: slide-in 1s ease-out forwards;
+  opacity: 0;
+}
+
+.contact-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Left Section */
+.contact-left {
+  flex: 1;
+}
+
+.contact-info {
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  color: #FFD700;
+}
+
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Right Section */
+.contact-right {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.2);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #FFD700;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 2px solid #FFD700;
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.submit-btn {
+  padding: 5px 20px;
+  background: #FFD700;
+  color: #111;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #fcd34d;
+  transform: scale(1.05);
+}

@@ -1,0 +1,203 @@
+/* 🌌 Background with stars */
+.projects-section {
+  background: linear-gradient(180deg, #0f0330, #1a0b45);
+  position: relative;
+  padding: 80px 0 50px;
+  color: #fff;
+  overflow: hidden;
+}
+
+.projects-section::before {
+  content: "";
+  /*background: url("https://www.transparenttextures.com/patterns/stardust.png");*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  animation: twinkle 6s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.6; }
+}
+
+/* 🟪 Animated Title Banner */
+.animated-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: #ffe4c4;
+  color: #8e44ec;
+  padding: 8px 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  animation: slide-in 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+/* 🃏 Project Card */
+.project-card {
+  background: rgba(42, 21, 77, 0.9);
+  border: 1px solid rgba(195, 139, 250, 0.5);
+  border-radius: 16px;
+  color: #f2d8ff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  z-index: 1;
+  padding-bottom: 50px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0px 12px 30px rgba(195, 139, 250, 0.4),
+              0 0 20px rgba(227, 180, 255, 0.3);
+}
+
+/* 🖼️ Project Image */
+.project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #c38bfa;
+  border-radius: 16px 16px 0 0;
+}
+
+/* 📄 Project Body */
+.project-body {
+  padding: 20px;
+}
+
+.project-body h4 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #e0b3ff;
+  margin-bottom: 10px;
+}
+
+.project-body p {
+  font-size: 0.96rem;
+  line-height: 1.5;
+  color: #d6b3f5;
+  min-height: 50px;
+  margin-bottom: 15px;
+}
+
+/* 🛠️ Tech Stack */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.tech-pill {
+  background-color: rgba(195, 139, 250, 0.15);
+  color: #e0b3ff;
+  border: 1px solid rgba(195, 139, 250, 0.4);
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* 🔗 GitHub Link Button */
+.github-link {
+  display: inline-block;
+  color: #f2d8ff;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid #f2d8ff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.github-link::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  transition: left 0.4s ease;
+}
+
+.github-link:hover::before {
+  left: 0;
+}
+
+.github-link:hover {
+  background: #c38bfa;
+  color: #fff;
+  border-color: #c38bfa;
+}
+
+/* 💻 Code Icon */
+.code-icon {
+  width: 50px;
+  height: 50px;
+  background: #c38bfa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2a154d;
+  font-size: 22px;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: bottom 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover .code-icon {
+  bottom: 10px;
+  transform: translateX(-50%) scale(1.1);
+}
+
+/* 🧠 Responsive Tweaks */
+@media (max-width: 767px) {
+  .animated-title {
+    font-size: 1.8rem;
+    padding: 14px 0;
+  }
+
+  .project-body h4 {
+    font-size: 1.1rem;
+  }
+
+  .project-body p {
+    font-size: 0.9rem;
+  }
+
+  .tech-pill {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+  }
+}
